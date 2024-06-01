@@ -28,7 +28,7 @@
 - `main.yml`: содержит конфигурацию GitHub Actions для автоматического выполнения сборки и тестирования проекта.
 
 ## Состояние тестов
-![](https://github.com/chamer313/tz2/actions/workflows/main.yml/bagde.svg?branch=main)
+![](https://github.com/chamer313/tz2/actions/workflows/main.yml/badge.svg?branch=main)
 
 ## График зависимости времени выполнения от размера входного файла
 
