@@ -7,7 +7,7 @@ import java.util.List;
 
 // прогоняем тесты для базового файла с числами от 1 до 15
 
-public class FuncTest {
+public class Tests {
     private static List<BigInteger> numbers;
 
     @BeforeAll
