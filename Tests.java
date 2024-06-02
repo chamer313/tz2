@@ -2,12 +2,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.List;
 
 // прогоняем тесты для базового файла с числами от 1 до 15
 
-public class Tests {
-    private static List<Integer> numbers;
+public class FuncTest {
+    private static List<BigInteger> numbers;
 
     @BeforeAll
     public static void setUp() throws IOException {
@@ -15,21 +16,38 @@ public class Tests {
     }
 
     @Test
-    public void testFunctions() {
-        int min = Funcs.findMin(numbers);
-        Assertions.assertEquals(1, min);
+    public void testFindMin() {
+        BigInteger min = Funcs.findMin(numbers);
+        Assertions.assertEquals(BigInteger.ONE, min);
+        System.out.println("Тест пройден успешно");
+    }
 
-        int max = Funcs.findMax(numbers);
-        Assertions.assertEquals(15, max);
+    @Test
+    public void testFindMax() {
+        BigInteger max = Funcs.findMax(numbers);
+        Assertions.assertEquals(new BigInteger("15"), max);
+        System.out.println("Тест пройден успешно");
+    }
 
-        int sum = Funcs.calculateSum(numbers);
-        Assertions.assertEquals(120, sum);
+    @Test
+    public void testCalculateSum() {
+        BigInteger sum = Funcs.calculateSum(numbers);
+        Assertions.assertEquals(new BigInteger("120"), sum);
+        System.out.println("Тест пройден успешно");
+    }
 
-        long prod = Funcs.calculateProduct(numbers);
-        Assertions.assertEquals(1307674368000L, prod);
+    @Test
+    public void testCalculateProduct() {
+        BigInteger product = Functions.calculateProduct(numbers);
+        Assertions.assertEquals(new BigInteger("1307674368000"), product);
+        System.out.println("Тест пройден успешно");
+    }
 
+    @Test
+    public void testTimeout() {
         Assertions.assertTimeoutPreemptively(java.time.Duration.ofMillis(1), () -> {
             Funcs.calculateSum(numbers);
         });
+        System.out.println("Тест пройден успешно");
     }
 }
