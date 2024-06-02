@@ -38,7 +38,7 @@ public class FuncTest {
 
     @Test
     public void testCalculateProduct() {
-        BigInteger product = Functions.calculateProduct(numbers);
+        BigInteger product = Funcs.calculateProduct(numbers);
         Assertions.assertEquals(new BigInteger("1307674368000"), product);
         System.out.println("Тест пройден успешно");
     }
